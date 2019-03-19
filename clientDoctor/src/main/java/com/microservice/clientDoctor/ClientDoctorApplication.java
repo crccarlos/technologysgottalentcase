@@ -3,9 +3,11 @@ package com.microservice.clientDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 //@SpringBootApplication
+@Service
 public class ClientDoctorApplication {
 
 @Autowired
@@ -26,7 +28,7 @@ public class ClientDoctorApplication {
 	public static void main(String[] args) {
 		//SpringApplication.run(ClientDoctorApplication.class, args);
 		ClientDoctorApplication ca = new ClientDoctorApplication("http://localhost:1234/");
-		String res = ca.searchDoctors("general", "Lima");
+		ca.searchDoctors("general", "Lima");
 	}
 
 }
